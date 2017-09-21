@@ -24,7 +24,7 @@ background-image: url("http://subdude-site.com/WebPics/WebPicsWeather/imgs/imgs_
 background-repeat: no-repeat;
 position:center;
 }
-#text{
+#text, #help{
 width:70%;
 margin: 10 auto;
 position:center;
@@ -48,7 +48,7 @@ text-align: center;
 }
 .button{
 background-color:black;
-margin: 25px;
+margin: 50px 25px 25px 25px;
 position: absolute;
 right:0;
 border: 5px solid black;
@@ -63,9 +63,60 @@ background-color:white;
 color:black;
 }
 
+img {
+-webkit-filter: grayscale(100%);
+filter: grayscale(100%);
+display:block;
+margin:auto;
+border: 5px solid black;
+}
+div.hidden{
+display:none;
+}
+#spacer {
+width:100%;
+height:200px;
+}
+#footer{
+font-family:  verdana, arial, sans-serif;
+font-weight:bold;
+width:100%;
+padding: 10px;
+background-color: black;
+position:fixed;
+bottom:0;
+font-size: 20px;
+color: white;
+text-align:center;
+}
+table{
+width: 100%
+}
+th {
+background-color: black;
+padding: 25px;
+border: 10px solid white;
+}
+th:hover{
+background-color:grey;
+}
+a:link, a:visited {
+text-decoration:none;
+color: white
+}
+a:hover {
+text-decoration:none;
+}
 
 </style>
 <script>
+var mfunc = function() {
+console.log("mfunc opened");
+var help = document.getElementById("help");
+help.style.display = "block";
+var button = document.getElementById("helpbutton");
+button.style.display = "none";
+};
 </script>
 </head>
 <body>
@@ -77,7 +128,23 @@ HURRICANE MARIA RELIEF
 <h1>Puerto Rico Needs Our Help</h1>
 <p>Hurricane Maria, the strongest hurricane to make landfall in the US in nearly 100 years, has devastated the island of Puerto Rico. 155 MPH winds and non-stop rainfall has caused massive destruction, cut the entire island off of power, and flooded thousands of homes and businesses. Rebuilding the island in the aftermath of this terrible disaster will be one of the most arduous humanitarian projects of the century.
 </div>
-<button class="button" onclick="expandPage()">How Can I Help?</button>
+<img src="https://media2.s-nbcnews.com/j/newscms/2017_38/2161981/ss-170920-hurricane-maria-mn-14_04534435518af8bd99cddd828202758a.nbcnews-ux-1024-900.jpg"  alt="stormaftermath" width = "70%" height = "400px" align="middle">
+<button class="button" id="helpbutton" onclick="mfunc()">How Can I Help?</button>
+<div class="hidden" id="help">
+<h1>Donate Today!</h1>
+<p>Puerto Rico is in desperate need of food, clothing, new infastructure, and they do not have the financial capabilities to provide this themselves. Your donation would allocate funds to provide these necessary supplies and aid in the rebuilding of the island. Please take time to visit these links and donate directly to their relief fund:</p>
+<table>
+<tr>
+<th><a href='http://unidosporpuertorico.com/en/'>Unidos Por Puerto Rico</a></th>
+<th><a href='https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.9535647/k.A2B9/Hurricane_Maria_Childrens_Relief_Fund/apps/ka/sd/donor.asp'>Save the Children</a></th>
+<th><a href='https://www.justgiving.com/crowdfunding/dominica-hurricanerelief'>Dominica Huricane Relief Fund</a></th>
+</tr>
+</table>
+
+</div>
+<div id="spacer"></div>
+<div id="footer">PRAY FOR PUERTO RICO</div>
+
 
 </body>
 </html>
